@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE4F992D2B8E648700C1036E /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE4F992C2B8E648700C1036E /* start.txt */; };
 		DE51AAB62B8538E400729143 /* Word_ScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51AAB52B8538E400729143 /* Word_ScrambleApp.swift */; };
 		DE51AAB82B8538E400729143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51AAB72B8538E400729143 /* ContentView.swift */; };
 		DE51AABA2B8538E500729143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51AAB92B8538E500729143 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE37F3DC2B8FC8B200BB9656 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		DE37F3DF2B8FCA0000BB9656 /* word_scramble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = word_scramble.png; sourceTree = "<group>"; };
+		DE4F992C2B8E648700C1036E /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		DE51AAB22B8538E400729143 /* Word Scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE51AAB52B8538E400729143 /* Word_ScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ScrambleApp.swift; sourceTree = "<group>"; };
 		DE51AAB72B8538E400729143 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 		DE51AAA92B8538E400729143 = {
 			isa = PBXGroup;
 			children = (
+				DE37F3DF2B8FCA0000BB9656 /* word_scramble.png */,
+				DE37F3DC2B8FC8B200BB9656 /* Readme.md */,
 				DE51AAB42B8538E400729143 /* Word Scramble */,
 				DE51AAB32B8538E400729143 /* Products */,
 			);
@@ -54,6 +60,7 @@
 				DE51AAB52B8538E400729143 /* Word_ScrambleApp.swift */,
 				DE51AAB72B8538E400729143 /* ContentView.swift */,
 				DE51AAB92B8538E500729143 /* Assets.xcassets */,
+				DE4F992C2B8E648700C1036E /* start.txt */,
 				DE51AABB2B8538E500729143 /* Preview Content */,
 			);
 			path = "Word Scramble";
@@ -126,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE51AABD2B8538E500729143 /* Preview Assets.xcassets in Resources */,
+				DE4F992D2B8E648700C1036E /* start.txt in Resources */,
 				DE51AABA2B8538E500729143 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
