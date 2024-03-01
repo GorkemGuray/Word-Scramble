@@ -57,7 +57,15 @@ struct ContentView: View {
         
         // exit if the remaining string is empty
         // kalan string boşsa çık
-        guard answer.count > 0 else {return}
+        
+        guard answer != rootWord else {
+            wordError(title: "Cheating 😈", message: "You cannot write the same word as a reply")
+            return
+        }
+        guard answer.count > 2 else {
+            wordError(title: "Too Short", message: "The word must have at least 3 letters.")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
