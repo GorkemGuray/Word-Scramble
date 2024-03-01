@@ -17,35 +17,46 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     
     
     var body: some View {
         
         NavigationStack{
-            List {
-                Section{
-                    TextField("Enter your word", text:$newWord)
-                        .textInputAutocapitalization(.never)
-                }//Section 1
+            VStack {
+                List {
+                    Section{
+                        TextField("Enter your word", text:$newWord)
+                            .textInputAutocapitalization(.never)
+                    }//Section 1
+                    
+                    Section{
+                        ForEach(usedWords, id: \.self) { word in
+                            HStack {
+                                Image(systemName: "\(word.count).circle")
+                                Text(word)
+                            }//HStack
+                            
+                        }//ForEach Closure
+                    }//Section 2
+                    
+                }//List
+                .navigationTitle(rootWord)
+                .toolbar {
+                    Button(action: startGame, label: {
+                        Image(systemName: "arrow.counterclockwise")
+                    })
+                }
+                .onSubmit(addNewWord)
+                .onAppear(perform: startGame)
+                .alert(errorTitle,isPresented: $showingError) {} message: {
+                    Text(errorMessage)
+                }
                 
-                Section{
-                    ForEach(usedWords, id: \.self) { word in
-                        HStack {
-                            Image(systemName: "\(word.count).circle")
-                            Text(word)
-                        }//HStack
-                        
-                    }//ForEach Closure
-                }//Section 2
-                
-            }//List
-            .navigationTitle(rootWord)
-            .onSubmit(addNewWord)
-            .onAppear(perform: startGame)
-            .alert(errorTitle,isPresented: $showingError) {} message: {
-                Text(errorMessage)
+                Text("Score : \(score)")
+                    .font(.largeTitle.bold())
             }
-            
         }//NavigationStack
 
     }//body
@@ -83,6 +94,7 @@ struct ContentView: View {
         }
         
         withAnimation {
+            score += answer.count
             usedWords.insert(answer, at: 0)
         }
         
@@ -90,6 +102,9 @@ struct ContentView: View {
     }//func addNewWord
     
     func startGame() {
+        usedWords.removeAll()
+        newWord = ""
+        score = 0
         // 1. Find the URL for start.txt in our app bundle
         // 1. Uygulama paketimizde start.txt için URL'i bul
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
@@ -147,6 +162,7 @@ struct ContentView: View {
         errorMessage = message
         showingError = true
     }// func wordError
+    
     
     
     
